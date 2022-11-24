@@ -1,57 +1,85 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import { Suspense } from "react";
 
-export default function Home() {
+interface SentimentResult {
+  text_raw: string,
+  text_clean: string,
+  text_clean_english: string,
+  nlp_classification: string,
+  bayes_classification: string,
+  polarity: number
+}
+
+// {/* @ts-expect-error Server Component */}
+async function getAnalysis() {
+  const res = await fetch("https://sentimen-analisis-twitter-api.herokuapp.com/predict")
+  
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json()
+}
+
+export default async function Page() {
+  // Initiate requests
+  const analysisData = await getAnalysis()
+  // console.log(analysisData)
+  
+  // Promises to resolve
+  const [ analysis ] = await Promise.all([analysisData])
+  // console.log(analysis)
+  
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+    <>
+      <div className="container mx-auto mt-20 mb-20 text-center">
+        <h1 className="text-3xl font-bold underline text-red-500">Coba fetch hasil analisis sentiment</h1>
+        
+        <Suspense fallback={<div>Loading...</div>}>
+          <table border={1}>
+            <thead>
+              <tr className="text-center">
+                <th>Nomor</th>
+                <th>Text Asli</th>
+                <th>Text Clean</th>
+                <th>Klasifikasi NLP</th>
+                <th>Klasifikasi Bayes</th>
+                <th>Polaritas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Siapa</td>
+                {analysis.data.map((data: any) => (
+                  <div key={data.id}>
+                    <td key={data.Text_Asli}>{data.Text_Asli}</td>
+                    <td>{data.Text_Clean}</td>
+                    <td>{data.Klasifikasi_NLP}</td>
+                    <td>{data.Klasifikasi_Bayes}</td>
+                    <td>{data.Polaritas}</td>
+                  </div>
+                ))}
+              </tr>
+            </tbody>
+          </table>
+        </Suspense>
+      </div>
+    </>
   )
 }
+
+// {/* @ts-expect-error Server Component */}
+// // Analysis List Component
+// async function AnalysisList({ analysis }): Promise<any> {
+
+//   return (
+//     <>
+//       <ul>
+
+//       </ul>
+//     </>
+//   )
+// }
+
+
