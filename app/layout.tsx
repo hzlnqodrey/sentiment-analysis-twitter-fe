@@ -15,7 +15,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <Head />
-      <body className="container text-center justify-center items-center mt-20 ml-20">
+      <body className="wrapper">
         <Navbar />
         {children}
       </body>

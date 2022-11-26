@@ -28,3 +28,12 @@ a {
     background: black;
   }
 }
+
+.wrapper {
+  max-width: 600px;
+  margin: auto;
+}
+
+p{
+  line-height: 30px;
+}
