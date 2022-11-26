@@ -34,7 +34,8 @@ export default async function Page() {
   return (
     <>
       <div className="container mx-auto mt-20 mb-20 text-center">
-        <h1 className="text-3xl font-bold underline text-red-500">Coba fetch hasil analisis sentiment</h1>
+        <h1>Haloo</h1>
+        {/* <h1 className="text-3xl font-bold underline text-red-500">Coba fetch hasil analisis sentiment</h1>
         
         <Suspense fallback={<div>Loading...</div>}>
           <table border={1}>
@@ -63,7 +64,7 @@ export default async function Page() {
               </tr>
             </tbody>
           </table>
-        </Suspense>
+        </Suspense> */}
       </div>
     </>
   )
