@@ -1,7 +1,6 @@
 import './globals.css'
 import Head from './head'
 import Navbar from './shared/navbar'
-import styles from './page.module.css'
 
 export default function RootLayout({
   children,

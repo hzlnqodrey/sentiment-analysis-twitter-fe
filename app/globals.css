@@ -24,8 +24,8 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    color:  rgb(19, 19, 19);
+    background: rgb(255, 255, 255);
   }
 }
 
@@ -36,4 +36,8 @@ a {
 
 p{
   line-height: 30px;
+}
+
+h2 {
+  font-weight: bold;
 }

@@ -16,9 +16,9 @@ export default function StaticPage() {
         <div>
             <h2>getStaticPaths and getStaticProps</h2>
             {allCharacters?.results.map((result: any, index: number) => (
-                <ul key={result.id}>
+                <ul className="list-disc" key={result.id}>
                     <Link href={`/staticprops/${result.name}`.replace(/\s+/g, "-").toLowerCase()}>
-                        <li>{result.name} : {result.species} | {result.status}</li>
+                        <li className="mt-4">{result.name} : {result.species} | {result.status}</li>
                     </Link>
                 </ul>
             ))}
