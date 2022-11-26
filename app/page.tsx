@@ -50,10 +50,10 @@ export default async function Page() {
             </thead>
             <tbody>
               <tr>
-                <td>Siapa</td>
-                {analysis.data.map((data: any) => (
+                {analysis.data.map((data: any, index: number) => (
                   <div key={data.id}>
-                    <td key={data.Text_Asli}>{data.Text_Asli}</td>
+                    <td>{index+1}</td>
+                    <td>{data.Text_Asli}</td>
                     <td>{data.Text_Clean}</td>
                     <td>{data.Klasifikasi_NLP}</td>
                     <td>{data.Klasifikasi_Bayes}</td>
