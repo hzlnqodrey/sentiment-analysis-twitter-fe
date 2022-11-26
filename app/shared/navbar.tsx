@@ -7,17 +7,15 @@ const routes: {
 }[] = [
     { name: "Server", path: "/server" },
     { name: "Client", path: "/client" },
-    { name: "Staticprop", path: "/Staticprop" }
+    { name: "Staticprop", path: "/staticprops" }
 ]
 
 export default function Navbar() {
     return (
         <>
-            {
-                routes.map((r: any) => {
-                    <Link className={ styles.navlinks } key={r.index} href={r.path}>{r.name}</Link>
-                })
-            }
+            {routes.map((r: any) => 
+                <Link className={ styles.navlinks } key={r.index} href={r.path}>{r.name}</Link>
+            )}
         </>
     )
 }
