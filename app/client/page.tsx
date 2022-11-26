@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { Suspense } from "react"
 import useSWR from "swr"
 
 // fetch function
@@ -14,13 +15,15 @@ export default function ClientPage() {
     return (
         <div>
             <h2>Client Fetching</h2>
-            {characters?.data?.results?.map((result: any, index: number) => (
-                <ul className="list-disc" key={result.id}>
-                    <Link href={`/staticprops/${result.name}`.replace(/\s+/g, "-").toLowerCase()}>
-                        <li className="mt-4">{result.name} : {result.species} | {result.status}</li>
-                    </Link>
-                </ul>
-            ))}
+            <Suspense fallback={ <>Loading..</> }>
+                {characters?.data?.results?.map((result: any, index: number) => (
+                    <ul className="list-disc" key={result.id}>
+                        <Link href={`/staticprops/${result.name}`.replace(/\s+/g, "-").toLowerCase()}>
+                            <li className="mt-4">{result.name} : {result.species} | {result.status}</li>
+                        </Link>
+                    </ul>
+                ))}
+            </Suspense>
         </div>
     )
 }
