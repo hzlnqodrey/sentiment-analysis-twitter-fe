@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "wordcloud.module.css"
-import eng_wordcloud from '../../public/static/images/english_wordcloud.png'
-import indo_wordcloud from '../../public/static/images/indo_wordcloud.png'
+import styles from "piechart.module.css"
+import nlp_piechart from '../../public/static/images/nlp_piechart.png'
+import bayes_piechart from '../../public/static/images/bayes_piechart.png'
 
 export default function WordcloudPage() {
 
     return (
         <>
-            <h1 className="text-center font-bold">Hasil Word Cloud</h1>
+            <h1 className="text-center font-bold">Hasil Pie Chart Sentimen Analisis</h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 border-solid border-2 border-sky-400 mt-20 mb-20">
                 <div className="relative object-fill">
                     <Image
-                        src={eng_wordcloud}
+                        src={nlp_piechart}
                         alt="Picture of the sentiment analysis result with NLP of english wordcloud"
                         placeholder="blur"
                         width={3000}
@@ -23,7 +23,7 @@ export default function WordcloudPage() {
                 </div>
                 <div className="relative object-fill">  
                     <Image
-                        src={indo_wordcloud}
+                        src={bayes_piechart}
                         alt="Picture of the sentiment analysis result with NLP of indonesia wordcloud"
                         placeholder="blur"
                         width={3000}

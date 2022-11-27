@@ -33,7 +33,7 @@ export default function Page() {
   
   return (
     <>
-      <div className="container mx-auto px-4 mt-20 mb-20 text-center">
+      <div className="container mx-auto mt-20 mb-20 text-center border-2 border-solid border-sky-400">
         <h1>Haloo</h1>
       </div>
     </>
