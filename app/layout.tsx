@@ -14,7 +14,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <Head />
-      <body className="wrapper sm:text-sm md:text-base lg:text-lg xl:text-xl text-lg font-plus-jakarta">
+      <body className="container mx-auto px-4 sm:text-sm md:text-base lg:text-lg xl:text-xl text-lg font-plus-jakarta">
         <Navbar />
         {children}
       </body>

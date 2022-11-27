@@ -16,9 +16,11 @@ const routes: {
 export default function Navbar() {
     return (
         <>
-            {routes.map((r: any) => 
-                <Link className={ styles.navlinks } key={r.index} href={r.path}>{r.name}</Link>
-            )}
+            <div className='container mx-auto px-4 mt-8 mb-16 text-center border-2 border-solid border-sky-400'>
+                {routes.map((r: any) => 
+                    <Link className={ styles.navlinks } key={r.index} href={r.path}>{r.name}</Link>
+                )}
+            </div>
         </>
     )
 }
