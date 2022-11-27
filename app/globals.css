@@ -30,6 +30,25 @@ a {
   }
 }
 
+table {
+  width: 100%;
+  table-layout: fixed;
+  border: 1;
+}
+
+table, td, th {
+  padding: 5px;
+}
+
+table, tr:nth-child(even) {
+  background: #191515;
+}
+
+table tr:hover {
+  background: silver;
+  cursor: pointer;
+}
+
 .wrapper {
   max-width: 600px;
   margin: auto;
@@ -37,8 +56,4 @@ a {
 
 p{
   line-height: 30px;
-}
-
-h2 {
-  font-weight: bold;
 }
