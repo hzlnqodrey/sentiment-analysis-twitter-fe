@@ -5,9 +5,12 @@ const routes: {
     name: string;
     path: string;
 }[] = [
-    { name: "Server", path: "/server" },
-    { name: "Client", path: "/client" },
-    { name: "Staticprop", path: "/staticprops" }
+    // { name: "Server", path: "/server" },
+    // { name: "Client", path: "/client" },
+    // { name: "Staticprop", path: "/staticprops" },
+    { name: "AnalysisResult", path: "/result" },
+    { name: "Piechart",path: "/piechart" },
+    { name: "Wordcloud", path: "/wordcloud"}
 ]
 
 export default function Navbar() {

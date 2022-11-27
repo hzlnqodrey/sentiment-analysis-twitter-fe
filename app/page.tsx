@@ -35,52 +35,9 @@ export default function Page() {
     <>
       <div className="container mx-auto mt-20 mb-20 text-center">
         <h1>Haloo</h1>
-        {/* <h1 className="text-3xl font-bold underline text-red-500">Coba fetch hasil analisis sentiment</h1>
-        
-        <Suspense fallback={<div>Loading...</div>}>
-          <table border={1}>
-            <thead>
-              <tr className="text-center">
-                <th>Nomor</th>
-                <th>Text Asli</th>
-                <th>Text Clean</th>
-                <th>Klasifikasi NLP</th>
-                <th>Klasifikasi Bayes</th>
-                <th>Polaritas</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                {analysis.data.map((data: any, index: number) => (
-                  <div key={data.id}>
-                    <td>{index+1}</td>
-                    <td>{data.Text_Asli}</td>
-                    <td>{data.Text_Clean}</td>
-                    <td>{data.Klasifikasi_NLP}</td>
-                    <td>{data.Klasifikasi_Bayes}</td>
-                    <td>{data.Polaritas}</td>
-                  </div>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-        </Suspense> */}
       </div>
     </>
   )
 }
-
-// {/* @ts-expect-error Server Component */}
-// // Analysis List Component
-// async function AnalysisList({ analysis }): Promise<any> {
-
-//   return (
-//     <>
-//       <ul>
-
-//       </ul>
-//     </>
-//   )
-// }
 
 
