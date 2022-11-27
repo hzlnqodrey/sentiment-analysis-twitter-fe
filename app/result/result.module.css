@@ -16,10 +16,10 @@
 }
 
 .tablestyle tr:nth-child(even) {
-    background: #E0E0E0;
+    background: #074c69;
 }
 
 .tablestyle tr:hover {
-    background: silver;
+    background: rgb(103, 18, 18);
     cursor: pointer;
 }
