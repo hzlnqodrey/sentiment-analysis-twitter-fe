@@ -33,8 +33,15 @@ export default function Page() {
   
   return (
     <>
-      <div className="container mx-auto mt-20 mb-20 text-center border-2 border-solid border-sky-400">
-        <h1>Haloo</h1>
+      <div className="font-plus-jakarta container mx-auto mt-20 mb-20 text-center">
+        <h1>Selamat datang di Website Hasil Analisis Sentiment pada Media Sosial Twitter dengan menggunakan Algoritma NLP dan Naive Bayes</h1>
+        <h2 className="font-bold mt-5">Kelompok 2 | Praktikum Data Science </h2>
+        <h2 className="font-bold mt-5">Anggota Kelompok</h2>
+        <ul className="mt-10">
+          <li>Hazlan Muhammad Qodri | 123190080 </li>
+          <li>Elisia Dwi Rahayu | 123190062 </li>
+          <li>Shania Septika Inayasari | 123190055 </li>
+        </ul>
       </div>
     </>
   )

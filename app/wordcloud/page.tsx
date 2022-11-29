@@ -9,7 +9,7 @@ export default function WordcloudPage() {
     return (
         <>
             <h1 className="text-center font-bold">Hasil Word Cloud</h1>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 border-solid border-2 border-sky-400 mt-20 mb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-20 mb-20">
                 <div className="relative object-fill">
                     <Image
                         src={eng_wordcloud}
@@ -19,7 +19,7 @@ export default function WordcloudPage() {
                         height={2000}
                         quality={100}
                         />
-                    <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, et.</h2>
+                    <h2 className="text-center">Wordcloud English dari 8000 data twitter</h2>
                 </div>
                 <div className="relative object-fill">  
                     <Image
@@ -30,7 +30,7 @@ export default function WordcloudPage() {
                         height={2000}
                         quality={100}
                         />
-                    <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente, et.</h2>
+                    <h2 className="text-center">Wordcloud Indonesia dari 8000 data twitter</h2>
                 </div>
             </div>
         </>

@@ -8,7 +8,8 @@ const routes: {
     // { name: "Server", path: "/server" },
     // { name: "Client", path: "/client" },
     // { name: "Staticprop", path: "/staticprops" },
-    { name: "AnalysisResult", path: "/result" },
+    { name: "Home", path: "/"},
+    { name: "Analysis Result", path: "/result" },
     { name: "Piechart",path: "/piechart" },
     { name: "Wordcloud", path: "/wordcloud"}
 ]
@@ -16,7 +17,7 @@ const routes: {
 export default function Navbar() {
     return (
         <>
-            <div className='container mx-auto px-4 mt-8 mb-16 text-center border-2 border-solid border-sky-400'>
+            <div className='container mx-auto px-4 mt-8 mb-16 text-center'>
                 {routes.map((r: any) => 
                     <Link className={ styles.navlinks } key={r.index} href={r.path}>{r.name}</Link>
                 )}
